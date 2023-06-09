@@ -145,8 +145,8 @@ img {
       & .imdb-note {
         font-weight: 400;
         padding: 2%;
-        & i{
-            font-size: 24px;
+        & i {
+          font-size: 24px;
         }
         & i.fa-star {
           color: gold;
