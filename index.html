@@ -1,15 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Collection of Ghilbi Studio released movies as part of the Collecion project">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Collection of Ghilbi Studio released movies as part of the Collecion project"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>My Ghilbi Studio Movies Collection</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <h1>My Ghilbi Movies Collection</h1>
+    <section>
+      <article>
+        <div class="flip-card-container" style="--hue: 220">
+          <div class="flip-card">
+            <div class="card-front">
+              <figure>
+                <!--<div class="img-bg"></div>-->
+                <img
+                  class="poster-front"
+                  src="https://m.media-amazon.com/images/M/MV5BYzJjMTYyMjQtZDI0My00ZjE2LTkyNGYtOTllNGQxNDMyZjE0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg"
+                />
+              </figure>
+            </div>
+            <div class="card-back">
+              <figure>
+                <div class="img-bg"></div>
+                <img
+                  class="poster-back"
+                  src="https://upload.wikimedia.org/wikipedia/en/0/02/My_Neighbor_Totoro_-_Tonari_no_Totoro_%28Movie_Poster%29.jpg"
+                />
+              </figure>
+
+              <button><a href="http://" id="trailer">Watch Trailer</a></button>
+
+              <div class="design-container">
+                <span class="design design--1"></span>
+                <span class="design design--2"></span>
+                <span class="design design--3"></span>
+                <span class="design design--4"></span>
+                <span class="design design--5"></span>
+                <span class="design design--6"></span>
+                <span class="design design--7"></span>
+                <span class="design design--8"></span>
+              </div>
+            </div>
+          </div>
+          <div class="detail_container">
+            <div class="details">
+              <div class="top">
+                <button class="close">X</button>
+                <span class="imdb-note">
+                  <i class="fa-brands fa-imdb"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span class="imdb"> 9.5</span>
+                  </span>
+              </div>
+              <h2 class="title">totoro</h2>
+              <p class="static">Director :<span class="director"></span></p>
+              <p class="static">Release year: <span class="year">1995</span></p>
+              <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+                hic, possimus voluptates in ex, laboriosam aspernatur reiciendis
+                neque consequatur, eos vitae velit laudantium quibusdam
+                repellendus. Expedita sunt vitae facere illo.
+              </p>
+
+              <div class="bottom">
+                <span class="genre">horror</span>
+                <span class="socials"> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
