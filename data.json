@@ -53,5 +53,15 @@
     "Genres": ["Animation", "Adventure", "Family"],
     "IMDb_Rating": 7.6,
     "Description": "The Clock family are four-inch-tall people who live anonymously in another family's residence, borrowing simple items to make their home. Life changes for the Clocks when their teenage daughter Arrietty is discovered"
+  },{
+    "Title": "Howl's Moving Castle",
+    "Director": "Hayao Miyazaki",
+    "Picture-Front": "pic 1",
+    "Picture-Back": "pic 2",
+    "Trailer": "link",
+    "Year": 2004,
+    "Genres": ["Animation", "Adventure", "Family"],
+    "IMDb_Rating": 8.2,
+    "Description": "The film is set in a fictional kingdom where both magic and early twentieth-century technology are prevalent, against the backdrop of a war with another kingdom. It tells the story of Sophie, a young milliner who is turned into an elderly woman by a witch who enters her shop and curses her. She encounters a wizard named Howl and gets caught up in his resistance to fighting for the king. Howl's life is bound to a fire demon named Calcifer, who is the source of the castle's magic and movement. As war escalates, Sophie works to break her curse and restore Howl's humanity, culminating in a climactic confrontation and resolution."
   }
 ]
