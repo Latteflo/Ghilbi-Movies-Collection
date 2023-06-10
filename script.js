@@ -1,10 +1,18 @@
+// Importing collection from another JavaScript file
 import collection from "./collection.js"
 
+// Initializing an empty string to hold the HTML content
 let content = ""
+
+// Add an event listener to the document that will run the following function when the HTML document has been completely loaded and parsed
 document.addEventListener("DOMContentLoaded", () => {
-  let order = 0 // Order counter
-  collection.forEach((item) => {
-    content += `
+    // Initialize an order counter to keep track of the order of each item
+    let order = 0;
+
+    // Iterate over each item in the collection
+    collection.forEach((item) => {
+        // Append a HTML template to the content string for each item in the collection. This template creates a flip card with front and back sides for each item.
+        content += `
     <article id="article-${order}">
     <div class="flip-card-container" style="--hue: 220">
             <div class="flip-card">
@@ -49,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }</span></p>
                     <p class="description">${item.Description}</p>
                     <div class="bottom">
-                        <span class="genre">${item.Genres.join(", ")}</span>
+                        <span class="genre">${item.Genres.join(" , ")}</span>
                         <span class="socials">
                             <a href="${item.Trailer}" id="trailer">
                                 <i class="fa-solid fa-play"></i>
@@ -61,48 +69,73 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </article>
     `
-    order++ // Increment the order counter
-  })
+       // Increment the order counter
+       order++;
+    })
 
-  document.querySelector("#movie-container").innerHTML = content
+    // Select the HTML element with the id of "movie-container" and replace its innerHTML with the content string
+    document.querySelector("#movie-container").innerHTML = content
 
-  //////added Details/Close btn functionality and behaviour
+    // Get all HTML elements with the class name of "detail_container"
+    let detailContainer = document.getElementsByClassName("detail_container")
 
-  let detailContainer = document.getElementsByClassName("detail_container")
-  let details = document.getElementsByClassName("details")
-  let detailsBtn = document.getElementsByClassName("details-button")
-  let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16)
-  let article = document.querySelector("article")
+    // Get all HTML elements with the class name of "details"
+    let details = document.getElementsByClassName("details")
 
-  const toggleDetails = (event) => {
-    let clickedIndex
+    // Get all HTML elements with the class name of "details-button"
+    let detailsBtn = document.getElementsByClassName("details-button")
+
+    // Generate a random hexadecimal color
+    let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16)
+
+    // Select the first "article" HTML element
+    let article = document.querySelector("article")
+
+    // Declare a function that will toggle the details of each item
+    const toggleDetails = () => {
+        // Iterate over each detail container
+        for (let i = 0; i < detailContainer.length; i++) {
+            // Check if the width of the detail container is not "250%"
+            if (detailContainer[i].style.width !== "250%") {
+                // Set the order of this article to 1000
+                document.getElementById(`article-${i}`).style.order = 1000
+
+                // Add the "expanded" class to the article
+                article.classList.add("expanded")
+
+                // Set the width of the detail container to "250%"
+                detailContainer[i].style.width = "250%"
+
+                // After 1 second, display the details
+                setTimeout(() => {
+                    details[i].style.display = "flex"
+                }, "1000")
+
+                // Change the text of the details button to "Close"
+                detailsBtn[i].innerText = "Close"
+            } else {
+                // Reset the order of this article
+                document.getElementById(`article-${i}`).style.order = i
+
+                // Set the width of the detail container to "130%"
+                detailContainer[i].style.width = "130%"
+
+                // Hide the details
+                details[i].style.display = "none"
+
+                // Change the text of the details button to "Details"
+                detailsBtn[i].innerText = "Details"
+            }
+        }
+    }
+
+    // Iterate over each detail container and set its background color to the random color
+    for (let i = 0; i < detailContainer.length; i++) {
+        detailContainer[i].style.backgroundColor = randomColor
+    }
+
+    // Add an event listener to each details button that will run the toggleDetails function when clicked
     for (let i = 0; i < detailsBtn.length; i++) {
-      if (detailsBtn[i] === event.target) {
-        clickedIndex = i
-        break
-      }
+        detailsBtn[i].addEventListener("click", toggleDetails)
     }
-    if (detailContainer[clickedIndex].style.width !== "250%") {
-      document.getElementById(`article-${clickedIndex}`).style.order = 1000
-      detailContainer[clickedIndex].style.width = "250%"
-      setTimeout(() => {
-        details[clickedIndex].style.display = "flex"
-      }, "1000")
-      detailsBtn[clickedIndex].innerText = "Close"
-    } else {
-      document.getElementById(`article-${clickedIndex}`).style.order =
-        clickedIndex // Reset the order of this article
-      detailContainer[clickedIndex].style.width = "130%"
-      details[clickedIndex].style.display = "none"
-      detailsBtn[clickedIndex].innerText = "Details"
-    }
-  }
-
-  for (let i = 0; i < detailsBtn.length; i++) {
-    detailsBtn[i].addEventListener("click", toggleDetails)
-  }
-
-  for (let i = 0; i < detailContainer.length; i++) {
-    detailContainer[i].style.backgroundColor = randomColor
-  }
 })
