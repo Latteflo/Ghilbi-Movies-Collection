@@ -35,15 +35,18 @@ section {
   margin: 2%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-auto-rows: 1fr;
   grid-gap: 2%;
   & article {
     padding: 3%;
     order: 0;
     white-space: normal;
     overflow-wrap: break-word;
+    transition: height 0.3s;
   }
   & article.expanded {
     grid-column: span 3;
+    height: auto;
   }
 }
 
