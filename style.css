@@ -496,11 +496,6 @@ footer {
 /* Media query for devices with maximum width of 365px */
 
 @media screen and (max-width: 560px) {
-  h1 {
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
   section {
     margin: 3%;
     padding: 8%;
