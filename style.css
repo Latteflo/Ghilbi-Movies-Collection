@@ -417,10 +417,14 @@ footer {
   & img {
     max-width: 30%;
     margin: 0 auto;
+    color: red;
   }
   & h3 {
     margin: 0 auto;
     color: white;
+    & span {
+        color: red;
+    }
   }
 }
 
