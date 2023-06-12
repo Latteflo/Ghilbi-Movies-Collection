@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class ="detail_wrap">
             <div class="detail_container">
+            <div class="useless"></div>
                 <div class="details">
                     <div class="top">
                         <span class="imdb-note">
@@ -101,52 +102,95 @@ document.addEventListener("DOMContentLoaded", () => {
   let article = document.querySelector("article")
 
   // Declare a function that will toggle the details of each item
+  // Define the function that toggles the details
   const toggleDetails = (i) => {
-    // First, close all detail containers
-    for (let j = 0; j < detailContainer.length; j++) {
-      if (j !== i) {
-        // Skip the current item
+    // Check if the viewport width is less than or equal to 765 pixels
+    if (window.innerWidth <= 1000) {
+      // This block will be executed if the viewport width is less than or equal to 765 pixels
+
+      // Check if the height of the detail container is not 230%
+      if (detailContainer[i].style.height !== "180%") {
+        // If the height is not 230%, then we want to open the details
+
+        // Add the "open" class to the article
+        document.getElementById(`article-${i}`).classList.add("open")
+
+        // Set the height of the detail container to 230%
+        detailContainer[i].style.height = "180%"
+
+        // Display the details by setting the CSS display property to "flex"
+        details[i].style.display = "flex"
+
+        // Change the text of the details button to "Close"
+        detailsBtn[i].innerText = "Close"
+      } else {
+        // If the height is already 230%, then we want to close the details
+
         // Remove the "open" class from the article
-        document.getElementById(`article-${j}`).classList.remove("open")
+        document.getElementById(`article-${i}`).classList.remove("open")
+
+        // Set the height of the detail container back to 130%
+        detailContainer[i].style.height = "90%"
+
+        // Hide the details by setting the CSS display property to "none"
+        details[i].style.display = "none"
+
+        // Change the text of the details button back to "Details"
+        detailsBtn[i].innerText = "Details"
+      }
+    } else {
+      // This block will be executed if the viewport width is greater than 765 pixels
+
+      // Loop over all the detail containers
+      for (let j = 0; j < detailContainer.length; j++) {
+        // Skip the current item
+        if (j !== i) {
+          // Remove the "open" class from the article
+          document.getElementById(`article-${j}`).classList.remove("open")
+
+          // Set the width of the detail container to "130%"
+          detailContainer[j].style.width = "130%"
+
+          // Hide the details by setting the CSS display property to "none"
+          details[j].style.display = "none"
+
+          // Change the text of the details button to "Details"
+          detailsBtn[j].innerText = "Details"
+        }
+      }
+
+      // Check if the width of the detail container is not "230%"
+      if (detailContainer[i].style.width !== "230%") {
+        // If the width is not 230%, then we want to open the details
+
+        // Add the "open" class to the article
+        document.getElementById(`article-${i}`).classList.add("open")
+
+        // Set the width of the detail container to "230%"
+        detailContainer[i].style.width = "230%"
+
+        // Display the details by setting the CSS display property to "flex"
+        details[i].style.display = "flex"
+
+        // Change the text of the details button to "Close"
+        detailsBtn[i].innerText = "Close"
+      } else {
+        // If the width is already 230%, then we want to close the details
+
+        // Remove the "open" class from the article
+        document.getElementById(`article-${i}`).classList.remove("open")
 
         // Set the width of the detail container to "130%"
-        detailContainer[j].style.width = "130%"
+        detailContainer[i].style.width = "130%"
 
-        // Hide the details
-        details[j].style.display = "none"
+        // Hide the details by setting the CSS display property to "none"
+        details[i].style.display = "none"
 
-        // Change the text of the details button to "Details"
-        detailsBtn[j].innerText = "Details"
+        // Change the text of the detailsbutton back to "Details"
+        detailsBtn[i].innerText = "Details"
       }
     }
-
-    // Check if the width of the detail container is not "250%"
-    if (detailContainer[i].style.width !== "230%") {
-      // Add the "open" class to the article
-      document.getElementById(`article-${i}`).classList.add("open")
-      // Set the width of the detail container to "250%"
-      detailContainer[i].style.width = "230%"
-      // display the details
-      details[i].style.display = "flex"
-
-      // Change the text of the details button to "Close"
-      detailsBtn[i].innerText = "Close"
-    } else {
-      // Remove the "open" class from the article
-      document.getElementById(`article-${i}`).classList.remove("open")
-
-      // Set the width of the detail container to "130%"
-      detailContainer[i].style.width = "130%"
-
-      // Hide the details
-      details[i].style.display = "none"
-
-      // Change the text of the details button to "Details"
-      detailsBtn[i].innerText = "Details"
-    }
   }
-
-  
 
   // Add an event listener to each details button that will run the toggleDetails function when clicked
   for (let i = 0; i < detailsBtn.length; i++) {
@@ -154,22 +198,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Check the brightness level of the text
-  const brightness =(color)=> {
-    const rgb = parseInt(color.substring(1), 16); // Convert hex color to RGB
-    const r = (rgb >> 16) & 0xff; // Extract red
-    const g = (rgb >> 8) & 0xff; // Extract green
-    const b = rgb & 0xff; // Extract blue
-  
+  const brightness = (color) => {
+    const rgb = parseInt(color.substring(1), 16) // Convert hex color to RGB
+    const r = (rgb >> 16) & 0xff // Extract red
+    const g = (rgb >> 8) & 0xff // Extract green
+    const b = rgb & 0xff // Extract blue
+
     // Calculate perceived brightness
     return Math.sqrt(
-      0.299 * Math.pow(r, 2) +
-      0.587 * Math.pow(g, 2) +
-      0.114 * Math.pow(b, 2)
-    );
+      0.299 * Math.pow(r, 2) + 0.587 * Math.pow(g, 2) + 0.114 * Math.pow(b, 2)
+    )
   }
-  // Give the color white or black to the text to ensure there is a nice contrast for visibility 
-  const contrastColor=(color)=> {
-    return brightness(color) > 127.5 ? '#000000' : '#ffffff';
+  // Give the color white or black to the text to ensure there is a nice contrast for visibility
+  const contrastColor = (color) => {
+    return brightness(color) > 127.5 ? "#000000" : "#ffffff"
   }
 
   // Iterate over each detail container and set its background color to the random color
@@ -179,7 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Assign the new random color to the current detail container
     detailContainer[i].style.backgroundColor = randomColor
-    detailContainer[i].style.color = contrastColor(randomColor);
-
+    detailContainer[i].style.color = contrastColor(randomColor)
   }
 })
