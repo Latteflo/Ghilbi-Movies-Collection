@@ -146,9 +146,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  
+
   // Add an event listener to each details button that will run the toggleDetails function when clicked
   for (let i = 0; i < detailsBtn.length; i++) {
     detailsBtn[i].addEventListener("click", () => toggleDetails(i))
+  }
+
+  // Check the brightness level of the text
+  const brightness =(color)=> {
+    const rgb = parseInt(color.substring(1), 16); // Convert hex color to RGB
+    const r = (rgb >> 16) & 0xff; // Extract red
+    const g = (rgb >> 8) & 0xff; // Extract green
+    const b = rgb & 0xff; // Extract blue
+  
+    // Calculate perceived brightness
+    return Math.sqrt(
+      0.299 * Math.pow(r, 2) +
+      0.587 * Math.pow(g, 2) +
+      0.114 * Math.pow(b, 2)
+    );
+  }
+  // Give the color white or black to the text to ensure there is a nice contrast for visibility 
+  const contrastColor=(color)=> {
+    return brightness(color) > 127.5 ? '#000000' : '#ffffff';
   }
 
   // Iterate over each detail container and set its background color to the random color
@@ -158,5 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Assign the new random color to the current detail container
     detailContainer[i].style.backgroundColor = randomColor
+    detailContainer[i].style.color = contrastColor(randomColor);
+
   }
 })

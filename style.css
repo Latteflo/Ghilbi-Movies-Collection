@@ -9,7 +9,7 @@
 *,
 *::after,
 *::before {
-  margin: 0;
+  margin: 3px;
   padding: 0;
   box-sizing: border-box;
 }
@@ -42,12 +42,14 @@ body {
 
 h1 {
   font-family: "Ghilbi", "Leto";
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  font-weight: 200;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: self-end;
   margin: 2%;
   font-size: 3rem;
+  flex-wrap: wrap;
   & .logo {
     width: 19rem;
   }
@@ -169,6 +171,10 @@ img {
   top: -92%;
   z-index: -1;
   border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all 0.2s ease-in-out;
   .detail_container {
     position: absolute;
@@ -185,7 +191,6 @@ img {
         flex-direction: row-reverse;
         justify-content: space-between;
         color: black;
-        padding: 2%;
         padding-left: 50%;
         & .imdb-note {
           font-weight: 800;
@@ -199,14 +204,14 @@ img {
         }
       }
       & .title {
-        padding: 3% 2% 2% 53%;
+        padding: 2% 1% 1% 53%;
         text-transform: uppercase;
         font-family: "Ghilbi", "Leto";
         letter-spacing: 3px;
       }
 
       & .static {
-        padding: 1% 0 0 53%;
+        padding: 0 0 0 53%;
         font-weight: 700;
         font-family: "Ghilbi", "Lato";
         & .director,
@@ -217,7 +222,7 @@ img {
       }
 
       & .description {
-        padding: 3% 2% 2% 53%;
+        padding: 2% 1% 1% 53%;
         text-align: start;
         text-indent: 5px;
         font-family: "Leto";
@@ -227,15 +232,14 @@ img {
         scroll-behavior: smooth;
       }
       & .bottom {
-        padding: 3% 2% 2% 53%;
+        padding: 2% 1% 1% 53%;
         display: flex;
         flex-direction: column;
         & .genre {
           display: inline;
-          margin: 3%;
+          padding: 3%;
           box-shadow: 0px 2px 42px -9px rgba(66, 65, 65, 0.56);
           border-radius: 3%;
-          padding: 2%;
         }
         & .socials {
           display: inline-block;
@@ -395,50 +399,41 @@ button:focus + .design-container {
   --op: 0.7;
 }
 
-.abs-site-link {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  color: hsla(0, 0%, 100%, 0.6);
-  font-size: 16px;
-  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-@media (max-width: 320px) {
-  body {
-    padding: 1%;
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  & img {
+    max-width: 30%;
     margin: 0 auto;
+  }
+  & h3 {
+    margin: 0 auto;
+  }
+}
+/* Media query for devices with maximum width of 320px */
+@media screen and (max-width: 320px) {
+  h1 {
+    flex-direction: column;
+  }
+  section {
+    flex-direction: column;
+  }
+}
+/* Media query for devices with maximum width of 768px */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  section {
     display: flex;
     flex-direction: column;
-    & section {
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 100%;
-    }
-    .flip-card-container {
-      width: 100%;
-      margin: 2%;
-      & .card-front,
-      .card-back {
-        width: 95%;
-        height: 95%;
-        left: 2%;
-      }
-    }
+  }
+}
 
-    .details {
-      & .top {
-        padding: 1%;
-      }
-      & .title {
-        padding: 1%;
-        margin: 2%;
-      }
-      & .description {
-        padding: 1%;
-      }
-      & .bottom {
-        padding: 1%;
-      }
-    }
+@media screen and (max-width: 1030px) {
+  article {
+    padding-right: 30%;
   }
 }
