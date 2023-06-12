@@ -1,8 +1,8 @@
-# Ghilbi Movies Collection 
+# Ghilbi Movies Collection
 
 Welcome to the Ghilbi Movies Collection project, a dynamic, playful, and interactive web-based collection of Ghilbi Movies. The project is part of BeCode training, and it focuses on JavaScript consolidation concepts. It has been built using pure HTML, CSS, and JavaScript.
 
-![Alt text](assets/posters/icons8-totoro-16.png)
+![Alt text](assets/posters/png/totoro.png)
 
 ## About
 
@@ -14,12 +14,15 @@ The project is live and can be accessed at the following link: [Ghilbi Movies Co
 
 ## Features
 
-* Explore a vast collection of Ghilbi movies.
-* Interactive and playful display.
-* Seamless navigation through the collection.
-* Built with pure HTML, CSS, and JavaScript.
+- Explore a vast collection of Ghilbi movies.
+- Interactive and playful display.
+- Seamless navigation through the collection.
+- Built with pure HTML, CSS, and JavaScript.
 
 ## Usage
 
 Open the [live demo](https://ghilby-movies-collection.netlify.app/) in any modern web browser. Navigate through the collection using the interactive display. Click on a movie to see more information about it.
 
+## Preview
+
+![Alt text](assets/pre.png)

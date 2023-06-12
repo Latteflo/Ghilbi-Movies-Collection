@@ -169,6 +169,7 @@ img {
 }
 .card-back .img-bg {
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+  border-radius: 6%;
 }
 /* details*/
 .detail_wrap {
