@@ -42,10 +42,11 @@ body {
 
 h1 {
   font-family: "Ghilbi", "Leto";
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  font-weight: 200;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: self-end;
   margin: 2%;
   font-size: 3rem;
   flex-wrap: wrap;
@@ -396,31 +397,41 @@ button:focus + .design-container {
   --op: 0.7;
 }
 
-.abs-site-link {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  color: hsla(0, 0%, 100%, 0.6);
-  font-size: 16px;
-  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  & img {
+    max-width: 30%;
+    margin: 0 auto;
+  }
+  & h3 {
+    margin: 0 auto;
+  }
 }
 /* Media query for devices with maximum width of 320px */
 @media screen and (max-width: 320px) {
   h1 {
     flex-direction: column;
   }
-  section{
+  section {
     flex-direction: column;
   }
-
 }
 /* Media query for devices with maximum width of 768px */
-@media screen and (max-width: 768px) and (min-width:1000px) {
-    h1{
-        font-size: 2rem;
-    }
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
   section {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  article {
+    padding-right: 30%;
   }
 }
