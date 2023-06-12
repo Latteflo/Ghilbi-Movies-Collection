@@ -9,7 +9,7 @@
 *,
 *::after,
 *::before {
-  margin: 0;
+  margin: 3px;
   padding: 0;
   box-sizing: border-box;
 }
@@ -48,6 +48,7 @@ h1 {
   align-items: center;
   margin: 2%;
   font-size: 3rem;
+  flex-wrap: wrap;
   & .logo {
     width: 19rem;
   }
@@ -403,42 +404,23 @@ button:focus + .design-container {
   font-size: 16px;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
 }
+/* Media query for devices with maximum width of 320px */
+@media screen and (max-width: 320px) {
+  h1 {
+    flex-direction: column;
+  }
+  section{
+    flex-direction: column;
+  }
 
-@media (max-width: 320px) {
-  body {
-    padding: 1%;
-    margin: 0 auto;
+}
+/* Media query for devices with maximum width of 768px */
+@media screen and (max-width: 768px) and (min-width:1000px) {
+    h1{
+        font-size: 2rem;
+    }
+  section {
     display: flex;
     flex-direction: column;
-    & section {
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 100%;
-    }
-    .flip-card-container {
-      width: 100%;
-      margin: 2%;
-      & .card-front,
-      .card-back {
-        width: 95%;
-        height: 95%;
-        left: 2%;
-      }
-    }
-
-    .details {
-      & .top {
-        padding: 1%;
-      }
-      & .title {
-        padding: 1%;
-        margin: 2%;
-      }
-      & .description {
-        padding: 1%;
-      }
-      & .bottom {
-        padding: 1%;
-      }
-    }
   }
 }

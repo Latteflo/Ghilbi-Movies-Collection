@@ -146,6 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  
+
   // Add an event listener to each details button that will run the toggleDetails function when clicked
   for (let i = 0; i < detailsBtn.length; i++) {
     detailsBtn[i].addEventListener("click", () => toggleDetails(i))
