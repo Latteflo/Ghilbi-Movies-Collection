@@ -171,6 +171,10 @@ img {
   top: -92%;
   z-index: -1;
   border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all 0.2s ease-in-out;
   .detail_container {
     position: absolute;
@@ -187,7 +191,6 @@ img {
         flex-direction: row-reverse;
         justify-content: space-between;
         color: black;
-        padding: 2%;
         padding-left: 50%;
         & .imdb-note {
           font-weight: 800;
@@ -201,14 +204,14 @@ img {
         }
       }
       & .title {
-        padding: 3% 2% 2% 53%;
+        padding: 2% 1% 1% 53%;
         text-transform: uppercase;
         font-family: "Ghilbi", "Leto";
         letter-spacing: 3px;
       }
 
       & .static {
-        padding: 1% 0 0 53%;
+        padding: 0 0 0 53%;
         font-weight: 700;
         font-family: "Ghilbi", "Lato";
         & .director,
@@ -219,7 +222,7 @@ img {
       }
 
       & .description {
-        padding: 3% 2% 2% 53%;
+        padding: 2% 1% 1% 53%;
         text-align: start;
         text-indent: 5px;
         font-family: "Leto";
@@ -229,15 +232,14 @@ img {
         scroll-behavior: smooth;
       }
       & .bottom {
-        padding: 3% 2% 2% 53%;
+        padding: 2% 1% 1% 53%;
         display: flex;
         flex-direction: column;
         & .genre {
           display: inline;
-          margin: 3%;
+          padding: 3%;
           box-shadow: 0px 2px 42px -9px rgba(66, 65, 65, 0.56);
           border-radius: 3%;
-          padding: 2%;
         }
         & .socials {
           display: inline-block;

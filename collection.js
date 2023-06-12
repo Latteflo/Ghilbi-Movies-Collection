@@ -56,7 +56,7 @@ let collection = [
       "A young witch, on her mandatory year of independent life, finds fitting into a new community difficult while she supports herself by running an air courier service",
   },
   {
-    Title: "The Secret World of Arrietty",
+    Title: "Arrietty",
     Director: "Hiromasa Yonebayashi",
     Poster_Front:
       "https://www.themoviedb.org/t/p/original/xGz75oFXt4OmFgvQ7kVjaPboRJr.jpg",
@@ -196,7 +196,7 @@ let collection = [
       "A group of Yokohama teens look to save their school's clubhouse from the wrecking ball in preparations for the 1964 Tokyo Olympics.",
   },
   {
-    Title: "Nausicaä of the Valley of the Wind",
+    Title: "Nausicaä",
     Director: "Hayao Miyazaki",
     Poster_Front:
       "https://www.themoviedb.org/t/p/original/y9ex2dskkKxWspRTjeAJG64Dnyp.jpg",
