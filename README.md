@@ -21,7 +21,7 @@ The project is live and can be accessed at the following link: [Ghilbi Movies Co
 
 ## Usage
 
-Open the [live demo](https://ghilby-movies-collection.netlify.app/) in any modern web browser. Navigate through the collection using the interactive display. Click on a movie to see more information about it.
+Open the [live demo](https://ghibli-movies-collection-sf.netlify.app/) in any modern web browser. Navigate through the collection using the interactive display. Click on a movie to see more information about it.
 
 ## Preview
 
