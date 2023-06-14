@@ -123,7 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
             detailsBtn[i].innerText = "Close"
       } else {
         // If the height is already 230%, then we want to close the details
-
+// Loop over all the detail containers
+for (let j = 0; j < detailContainer.length; j++) {
+  // Skip the current item
+  if (j !== i) {
         // Remove the "open" class from the article
         document.getElementById(`article-${i}`).classList.remove("open")
 
@@ -135,10 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Change the text of the details button back to "Details"
         detailsBtn[i].innerText = "Details"
-      }
+      }}}
     } else {
-      // This block will be executed if the viewport width is greater than 1390 pixels
-
+      // This block will be executed if the viewport width is greater 
       // Loop over all the detail containers
       for (let j = 0; j < detailContainer.length; j++) {
         // Skip the current item

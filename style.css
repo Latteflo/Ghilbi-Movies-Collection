@@ -466,7 +466,7 @@ footer {
       padding: 2px;
     }
     .detail_wrap {
-      width: 110%;
+      width: 120%;
       right: 7%;
       & .detail_container {
         display: flex;
@@ -496,8 +496,11 @@ footer {
       margin: 3%;
     }
     & .open {
-      padding-bottom: 90%;
-      margin-bottom: 60%;
+      padding-bottom: 70%;
+      margin-bottom: 70%;
     }
+    .detail_wrap {
+      width: 110%;
+      right: 1%;}
   }
 }
