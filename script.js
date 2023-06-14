@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Define the function that toggles the details
   const toggleDetails = (i) => {
     // Check if the viewport width is less than or equal to 765 pixels
-    if (window.innerWidth <= 1000) {
+    if (window.innerWidth <= 1390) {
       // This block will be executed if the viewport width is less than or equal to 765 pixels
 
       // Check if the height of the detail container is not 230%
@@ -148,8 +148,8 @@ document.addEventListener("DOMContentLoaded", () => {
           // Remove the "open" class from the article
           document.getElementById(`article-${j}`).classList.remove("open")
 
-          // Set the width of the detail container to "130%"
-          detailContainer[j].style.width = "130%"
+          // Set the width of the detail container to "120%"
+          detailContainer[j].style.width = "120%"
 
           // Hide the details by setting the CSS display property to "none"
           details[j].style.display = "none"
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById(`article-${i}`).classList.remove("open")
 
         // Set the width of the detail container to "130%"
-        detailContainer[i].style.width = "130%"
+        detailContainer[i].style.width = "120%"
 
         // Hide the details by setting the CSS display property to "none"
         details[i].style.display = "none"
