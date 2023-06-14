@@ -258,7 +258,7 @@ let collection = [
     Poster_Back:"https://www.themoviedb.org/t/p/original/s7pLI4lTzTPP4hzROCdqxU2n27T.jpg",
     Trailer:"https://youtu.be/W71mtorCZDw",
     Year:2013,
-    Genres:["Animation", "Drama", "Fantasy", "Family"],
+    Genres:["Drama", "Fantasy", "Family"],
     IMDB_Score:8.0,
     Description:"Found inside a shining stalk of bamboo by an old bamboo cutter and his wife, a tiny girl grows rapidly into an exquisite young lady. The mysterious young princess enthralls all who encounter her, but ultimately she must confront her fate, the punishment for her crime."
   }

@@ -195,7 +195,6 @@ img {
   transition: all 0.2s ease-in-out;
   .detail_container {
     position: absolute;
-    top: -2%;
     flex-grow: 3;
     transition: all 0.1s ease-in-out;
     display: flex;
@@ -254,8 +253,9 @@ img {
         scroll-behavior: smooth;
       }
       & .bottom {
-        padding: 3%;
+        padding: 1%;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         & .genre {
           display: inline;
@@ -269,7 +269,6 @@ img {
         & .socials {
           display: inline-block;
           margin: 0 auto;
-          padding-top: 6%;
           & i {
             color: rgb(238, 5, 5);
             border: none;
@@ -451,12 +450,13 @@ footer {
   }
   section {
     justify-content: center;
+    margin: 3%;
     & article {
       order: 0;
     }
     & .open {
       padding-bottom: 49%;
-      margin-bottom: 6%;
+      margin-bottom: 8%;
     }
     .flip-card-container {
       padding: 2px;
@@ -470,7 +470,7 @@ footer {
         }
         & .details {
           margin: 1%;
-          padding-top: 130%;
+          padding-top: 142%;
           width: 100%;
         }
       }
@@ -490,9 +490,12 @@ footer {
       margin: 3%;
     }
     & .open {
- 
       padding-bottom: 90%;
       margin-bottom: 60%;
     }
+
+    .detail_wrap{
+      width:110%;
+      right: 0%;}
   }
 }

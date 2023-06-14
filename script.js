@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="genres">
                     ${item.Genres.map(
                       (genre) => `
-                        <span class="genre" style="background-color: ${randomColor}">${genre}</span>
+                        <span class="genre">${genre}</span>
                     `
                     ).join("")}
                 </div>
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById(`article-${i}`).classList.remove("open")
 
         // Set the height of the detail container back to 130%
-        detailContainer[i].style.height = "90%"
+        detailContainer[i].style.height = "85%"
 
         // Hide the details by setting the CSS display property to "none"
         details[i].style.display = "none"
@@ -222,5 +222,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Assign the new random color to the current detail container
     detailContainer[i].style.backgroundColor = randomColor
     detailContainer[i].style.color = contrastColor(randomColor)
+
   }
+  //Add contrastColor to genre section
+  let genre = document.getElementsByClassName("genre")
+  genre.style.backgroundColor=randomColor()
+  genre.style.color=contrastColor(randomColor)
 })
