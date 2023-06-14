@@ -38,6 +38,8 @@ body {
     rgba(20, 178, 225, 1) 4%,
     rgba(232, 228, 160, 0.48792016806722693) 90%
   );
+  padding: 0;
+  margin: 0;
 }
 .background-image {
   background-image: url(./assets/cloud.png);
@@ -78,7 +80,7 @@ section {
     margin: 3%;
   }
   & .open {
-    flex-grow: 3;
+    flex-grow: 2;
     padding-right: 2%;
     transition: all 0.1s ease-in-out;
   }
@@ -182,7 +184,7 @@ img {
   align-items: center;
   height: 85%;
   width: 120%;
-  right: 6%;
+  right: 7%;
   top: -92%;
   padding: 0;
   margin: 0;
@@ -195,7 +197,6 @@ img {
   transition: all 0.2s ease-in-out;
   .detail_container {
     position: absolute;
-    top: -2%;
     flex-grow: 3;
     transition: all 0.1s ease-in-out;
     display: flex;
@@ -254,8 +255,9 @@ img {
         scroll-behavior: smooth;
       }
       & .bottom {
-        padding: 3%;
+        padding: 1%;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         & .genre {
           display: inline;
@@ -269,7 +271,6 @@ img {
         & .socials {
           display: inline-block;
           margin: 0 auto;
-          padding-top: 6%;
           & i {
             color: rgb(238, 5, 5);
             border: none;
@@ -451,17 +452,22 @@ footer {
   }
   section {
     justify-content: center;
+    margin: 3%;
     & article {
       order: 0;
     }
     & .open {
       padding-bottom: 49%;
-      margin-bottom: 6%;
+      flex-grow: 0;
+      padding-right: 0;
+      margin-bottom: 8%;
     }
     .flip-card-container {
       padding: 2px;
     }
     .detail_wrap {
+      width: 120%;
+      right: 7%;
       & .detail_container {
         display: flex;
         flex-direction: column;
@@ -470,7 +476,7 @@ footer {
         }
         & .details {
           margin: 1%;
-          padding-top: 130%;
+          padding-top: 142%;
           width: 100%;
         }
       }
@@ -490,9 +496,11 @@ footer {
       margin: 3%;
     }
     & .open {
- 
-      padding-bottom: 90%;
-      margin-bottom: 60%;
+      padding-bottom: 70%;
+      margin-bottom: 70%;
     }
+    .detail_wrap {
+      width: 110%;
+      right: 3%;}
   }
 }
