@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="genres">
                     ${item.Genres.map(
                       (genre) => `
-                        <span class="genre">${genre}</span>
+                        <span class="genre" style="background-color:${randomColor};">${genre}</span>
                     `
                     ).join("")}
                 </div>
@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let article = document.querySelector("article")
 
   // Declare a function that will toggle the details of each item
-  // Define the function that toggles the details
   const toggleDetails = (i) => {
     // Check if the viewport width is less than or equal to 765 pixels
     if (window.innerWidth <= 1390) {
@@ -110,26 +109,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Check if the height of the detail container is not 230%
       if (detailContainer[i].style.height !== "180%") {
-        // If the height is not 230%, then we want to open the details
+        // If the height is not 180%, then we want to open the details
+            // Add the "open" class to the article
+            document.getElementById(`article-${i}`).classList.add("open")
 
-        // Add the "open" class to the article
-        document.getElementById(`article-${i}`).classList.add("open")
+            // Set the height of the detail container to 230%
+            detailContainer[i].style.height = "180%"
 
-        // Set the height of the detail container to 230%
-        detailContainer[i].style.height = "180%"
+            // Display the details by setting the CSS display property to "flex"
+            details[i].style.display = "flex"
 
-        // Display the details by setting the CSS display property to "flex"
-        details[i].style.display = "flex"
-
-        // Change the text of the details button to "Close"
-        detailsBtn[i].innerText = "Close"
+            // Change the text of the details button to "Close"
+            detailsBtn[i].innerText = "Close"
       } else {
         // If the height is already 230%, then we want to close the details
 
         // Remove the "open" class from the article
         document.getElementById(`article-${i}`).classList.remove("open")
 
-        // Set the height of the detail container back to 130%
+        // Set the height of the detail container back to 85%
         detailContainer[i].style.height = "85%"
 
         // Hide the details by setting the CSS display property to "none"
@@ -139,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
         detailsBtn[i].innerText = "Details"
       }
     } else {
-      // This block will be executed if the viewport width is greater than 765 pixels
+      // This block will be executed if the viewport width is greater than 1390 pixels
 
       // Loop over all the detail containers
       for (let j = 0; j < detailContainer.length; j++) {
@@ -222,10 +220,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Assign the new random color to the current detail container
     detailContainer[i].style.backgroundColor = randomColor
     detailContainer[i].style.color = contrastColor(randomColor)
-
   }
   //Add contrastColor to genre section
   let genre = document.getElementsByClassName("genre")
-  genre.style.backgroundColor=randomColor()
-  genre.style.color=contrastColor(randomColor)
+  genre.style.color = contrastColor(randomColor)
 })
