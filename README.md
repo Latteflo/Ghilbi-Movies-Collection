@@ -10,7 +10,7 @@ This project allows you to explore the vast and magical world of Ghilbi movies. 
 
 ## Live Demo
 
-The project is live and can be accessed at the following link: [Ghilbi Movies Collection](https://ghilby-movies-collection.netlify.app/).
+The project is live and can be accessed at the following link: [Ghilbi Movies Collection](https://ghibli-movies-collection-sf.netlify.app/).
 
 ## Features
 
