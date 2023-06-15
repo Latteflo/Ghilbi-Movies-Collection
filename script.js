@@ -102,11 +102,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let article = document.querySelector("article")
 
   // Declare a function that will toggle the details of each item
-  const toggleDetails = (i) => {
+  const toggleDetails = (i) => {  
     // Check if the viewport width is less than or equal to 765 pixels
     if (window.innerWidth <= 1390) {
       // This block will be executed if the viewport width is less than or equal to 765 pixels
-      details[i].style.display = "none"
 
       // Check if the height of the detail container is not 230%
       if (detailContainer[i].style.height !== "180%") {
