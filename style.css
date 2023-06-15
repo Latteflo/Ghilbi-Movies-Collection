@@ -209,6 +209,7 @@ img {
 }
 .details {
   width: 50%;
+  display: none;
   flex-direction: column;
   justify-content: flex-start;
   font-family: "Leto", "Sans";
