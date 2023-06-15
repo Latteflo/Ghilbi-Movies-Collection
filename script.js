@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Check if the viewport width is less than or equal to 765 pixels
     if (window.innerWidth <= 1390) {
       // This block will be executed if the viewport width is less than or equal to 765 pixels
+      details[i].style.display = "none"
 
       // Check if the height of the detail container is not 230%
       if (detailContainer[i].style.height !== "180%") {
